@@ -17,9 +17,9 @@ export const navigation: NavigationItem[] = [
     // },
     { label: "Tentang", href: "/#about" },
     // { label: "Struktur Organisasi", href: "/struktur" },
+    // { label: "Afiliasi Kampus", href: "/#afiliasi" },
     { label: "Galeri", href: "/#gallery" },
 
-    { label: "Afiliasi Kampus", href: "/#afiliasi" },
     { label: "Blog", href: "/#blogs" },
     // { label: "Hubungi", href: "/#contact" },
     {

@@ -1,7 +1,7 @@
 import { Badge } from "../ui/badge"
 
 export default () => (
-    <section className="bg-cross">
+    <section className="bg-cross dark:bg-none">
         <div className="mx-auto px-4 lg:px-0 py-12 container">
             <div className="lg:flex justify-center items-center lg:text-center">
                 <div className="hidden lg:block w-3/12">
@@ -14,7 +14,7 @@ export default () => (
                     <Badge variant={"secondary"} className="mb-4">Beranda</Badge>
                     <h1 className="mb-4 text-4xl lg:text-6xl leading-snug">
                         <span className="text-primary">Unggul</span> dalam Ilmu, <br />
-                        Kokoh dalam <span className="text-primary">Iman</span> <br />
+                        Kokoh dalam <span className="text-primary">Islam</span> <br />
                         {/* <span className="text-primary">Berpegang pada</span> Qur'an */}
                     </h1>
                     <p className="mb-12 text-muted text-lg lg:text-xl">
