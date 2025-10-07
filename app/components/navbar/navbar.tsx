@@ -10,7 +10,7 @@ export default () => {
                     <div className="flex justify-between items-center">
                         <a href='/#' className="flex items-center gap-4">
                             <img loading='lazy' src={logo} alt="LPI Al-Hidayah Logo" className="size-10" />
-                            <div className="text-muted text-xl">LPI <span className="text-primary">Al-Hidayah</span></div>
+                            <div className="text-xl">LPI <span className="text-primary">Al-Hidayah</span></div>
                         </a>
                         <NavLg />
                         <NavSm />

@@ -6,7 +6,7 @@ export type SocialButtonProps = {
 };
 
 export default ({ href, Icon }: SocialButtonProps) => (
-    <Button asChild variant={"secondary"} className="rounded-full" size={"icon"}>
+    <Button asChild variant={"secondary"} className="rounded-full hover:text-primary" size={"icon"}>
         <a href={href} target="_blank">
             <Icon />
         </a>

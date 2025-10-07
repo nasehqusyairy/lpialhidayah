@@ -6,7 +6,7 @@ export type NavigationItem = {
 }
 
 export const navigation: NavigationItem[] = [
-    { label: "Beranda", href: "/#" },
+    { label: "Beranda", href: "#home" },
     // {
     //     label: "Tentang",
     //     children: [
@@ -15,21 +15,21 @@ export const navigation: NavigationItem[] = [
     //         { label: "Prestasi", href: "/prestasi" },
     //     ],
     // },
-    { label: "Tentang", href: "/#about" },
+    { label: "Tentang", href: "#about" },
     // { label: "Struktur Organisasi", href: "/struktur" },
-    // { label: "Afiliasi Kampus", href: "/#afiliasi" },
-    { label: "Galeri", href: "/#gallery" },
+    // { label: "Afiliasi Kampus", href: "#afiliasi" },
+    // { label: "Galeri", href: "#gallery" },
 
-    { label: "Blog", href: "/#blogs" },
-    // { label: "Hubungi", href: "/#contact" },
-    {
-        label: "Lembaga",
-        children: [
-            { label: "MA", href: "/ma" },
-            { label: "SMP", href: "/smp" },
-            { label: "TPQ", href: "/tpq" },
-            { label: "Mahad", href: "/mahad" },
-        ],
-    },
+    { label: "Artikel", href: "#articles" },
+    // { label: "Hubungi", href: "#contact" },
+    // {
+    //     label: "Lembaga",
+    //     children: [
+    //         { label: "MA", href: "/ma" },
+    //         { label: "SMP", href: "/smp" },
+    //         { label: "TPQ", href: "/tpq" },
+    //         { label: "Mahad", href: "/mahad" },
+    //     ],
+    // },
     { label: "PPDB", href: "/ppdb", isButton: true },
 ]

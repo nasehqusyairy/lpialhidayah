@@ -125,6 +125,10 @@
     @apply bg-background text-foreground;
   }
   
+  html {
+    @apply scroll-pt-16 scroll-smooth;
+  }
+  
   [data-slot="button"],a,button {
     @apply cursor-pointer;
   }

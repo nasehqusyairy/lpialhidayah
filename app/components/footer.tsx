@@ -17,7 +17,7 @@ export default () => (
                 <div className="flex items-center gap-4">
                     {socialLinks.map((el, i) => <SocialButton key={i} {...el} />)}
                 </div>
-                <div className="lg:m-0 mt-4">© 2025 LPI Al-Hidayah Kauman</div>
+                <div className="lg:m-0 mt-4">© 2025 LPI <span className="text-primary">Al-Hidayah</span></div>
             </div>
         </div>
     </div>
