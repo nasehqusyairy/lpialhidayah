@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import icon from "~/images/logo-lpi.webp";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -21,6 +22,8 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  // icon
+  { rel: "icon", href: icon },
 ];
 
 export function meta({ }: Route.MetaArgs) {
