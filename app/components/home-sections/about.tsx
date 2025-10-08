@@ -34,7 +34,7 @@ export default () => (
                 </div>
                 <div className="lg:w-1/2">
                     <h2 className="mb-4 text-muted">Struktur Organisasi</h2>
-                    <div className="mb-4 border rounded-2xl h-[calc(100%-3rem)]" style={{ backgroundImage: `url(${struktur})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
+                    <div className="mb-4 border rounded-2xl h-96 lg:h-[calc(100%-3rem)]" style={{ backgroundImage: `url(${struktur})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
                     </div>
                 </div>
             </div>
