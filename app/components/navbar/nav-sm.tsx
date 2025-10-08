@@ -14,6 +14,7 @@ import { Button } from "../ui/button"
 import { navigation } from "~/models/navigation"
 import { ChevronsUpDown, Menu } from "lucide-react"
 import { Link } from "react-router"
+import { Separator } from "../ui/separator"
 
 export default () => (
     <Sheet>
@@ -31,7 +32,7 @@ export default () => (
             </SheetHeader>
 
             <nav className="flex flex-col gap-2">
-                {navigation.map((item) =>
+                {navigation.map((item, index) =>
                     item.children ? (
                         <Collapsible key={item.label}>
                             <CollapsibleTrigger className="flex justify-between items-center hover:bg-secondary p-2 rounded w-full">
@@ -56,6 +57,8 @@ export default () => (
                         >
                             <Link to={item.href ?? "#"}>{item.label}</Link>
                         </Button>
+                    ) : item.label === 'separator' ? (
+                        <Separator orientation="horizontal" key={`separator-${index}`} />
                     ) : (
                         <Link
                             key={item.label}

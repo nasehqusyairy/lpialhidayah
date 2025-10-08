@@ -11,11 +11,12 @@ import {
 import { Button } from "../ui/button"
 import { navigation } from "~/models/navigation"
 import { Link } from "react-router"
+import { Separator } from "../ui/separator"
 
 export default () => (
     <NavigationMenu viewport={false} className="hidden lg:block">
         <NavigationMenuList>
-            {navigation.map((item) =>
+            {navigation.map((item, index) =>
                 item.children ? (
                     <NavigationMenuItem key={item.label}>
                         <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
@@ -37,6 +38,8 @@ export default () => (
                             ) : item.label}
                         </Button>
                     </NavigationMenuItem>
+                ) : item.label === 'separator' ? (
+                    <Separator orientation="vertical" key={`separator-${index}`} className="h-8!" />
                 ) : (
                     <NavigationMenuItem key={item.label}>
                         <NavigationMenuLink href={item.href ?? "#"}>{item.label}</NavigationMenuLink>

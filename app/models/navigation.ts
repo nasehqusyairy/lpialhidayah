@@ -1,3 +1,5 @@
+import { companies } from "./company";
+
 export type NavigationItem = {
     label: string;
     href?: string;
@@ -6,30 +8,13 @@ export type NavigationItem = {
 }
 
 export const navigation: NavigationItem[] = [
-    { label: "Beranda", href: "#home" },
-    // {
-    //     label: "Tentang",
-    //     children: [
-    //         { label: "Visi & Misi", href: "/visi-misi" },
-    //         { label: "Struktur Organisasi", href: "/struktur" },
-    //         { label: "Prestasi", href: "/prestasi" },
-    //     ],
-    // },
-    { label: "Tentang", href: "#about" },
-    // { label: "Struktur Organisasi", href: "/struktur" },
-    // { label: "Afiliasi Kampus", href: "#afiliasi" },
-    // { label: "Galeri", href: "#gallery" },
+    { label: "Beranda", href: "/" },
+    { label: "Berita", href: "/news" },
+    { label: "Hubungi", href: "/contact" },
+    { label: 'separator' },
 
-    { label: "Artikel", href: "#articles" },
-    // { label: "Hubungi", href: "#contact" },
-    // {
-    //     label: "Lembaga",
-    //     children: [
-    //         { label: "MA", href: "/ma" },
-    //         { label: "SMP", href: "/smp" },
-    //         { label: "TPQ", href: "/tpq" },
-    //         { label: "Mahad", href: "/mahad" },
-    //     ],
-    // },
+    ...companies,
+
     { label: "PPDB", href: "/ppdb", isButton: true },
+
 ]

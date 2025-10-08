@@ -1,10 +1,6 @@
 import { Link } from "react-router"
-import { Badge } from "../ui/badge"
+import { companies } from "~/models/company"
 
-import logo from '~/images/logo-lpi.webp'
-import logoStai from '~/images/logo-stai.webp'
-import logoMahad from '~/images/logo-mahad.webp'
-import logoMa from '~/images/logo-ma.webp'
 
 export default () => (
     <section className="bg-cross dark:bg-none">
@@ -23,39 +19,35 @@ export default () => (
                     <p className="mb-6 lg:mb-12 text-muted text-lg lg:text-xl">
                         Lembaga pembuka masa depan gemilang bagi generasi penerus bangsa melalui pendidikan Islami yang unggul, berprestasi, dan berkarakter Qur'ani
                     </p>
-                    <div className="flex lg:justify-center gap-4 lg:gap-6 text-muted text-center">
-                        <Link className="block hover:text-primary" to={'#'}>
-                            <img src={logoStai} className="mb-2 h-12 lg:h-16" alt="" />
-                            <p>STAI</p>
-                        </Link>
-                        <Link className="block hover:text-primary" to={'#'}>
-                            <img src={logoMa} className="mb-2 h-12 lg:h-16" alt="" />
-                            <p>MA</p>
-                        </Link>
-                        <Link className="block hover:text-primary" to={'#'}>
-                            <img src={logo} className="mb-2 h-12 lg:h-16" alt="" />
-                            <p>SMP</p>
-                        </Link>
-                        <Link className="block hover:text-primary" to={'#'}>
-                            <img src={logo} className="mb-2 h-12 lg:h-16" alt="" />
-                            <p>TPQ</p>
-                        </Link>
-                        <Link className="block hover:text-primary" to={'#'}>
-                            <img src={logoMahad} className="mb-2 h-12 lg:h-16" alt="" />
-                            <p>Mahad</p>
-                        </Link>
+
+                    <div className="flex flex-wrap lg:justify-center gap-4 lg:gap-6 text-muted text-center">
+                        {companies.map((company) => (
+                            <Link key={company.label} className="block hover:text-primary" to={company.href}>
+                                <img src={company.logo} className="mx-auto mb-2 h-12 lg:h-16" alt={company.label} />
+                                <p>{company.label}</p>
+                            </Link>
+                        ))}
                     </div>
-                    {/* <div className="flex justify-center gap-4">
-                        <iframe className="rounded-2xl lg:w-8/12 aspect-video" src="https://www.youtube.com/embed/UjwXqJlgPIY" title="HIGHLIGHTS HAFLAH TASYAKKUR PPTQ AL-MANNAN KE-III #pptqalmannan #haflahtasyakkur #wisuda" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                    </div> */}
+
+                    {/* 
+                    <div className="flex justify-center gap-4">
+                        <iframe className="rounded-2xl lg:w-8/12 aspect-video" 
+                            src="https://www.youtube.com/embed/UjwXqJlgPIY"
+                            title="HIGHLIGHTS HAFLAH TASYAKKUR PPTQ AL-MANNAN KE-III #pptqalmannan #haflahtasyakkur #wisuda"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen>
+                        </iframe>
+                    </div> 
+                    */}
                 </div>
+
                 <div className="hidden lg:flex justify-end w-3/12">
                     <div className="relative w-1/2">
                         <div data-aos="flip-left" className="bg-primary rounded-lg h-[24rem] rotate-12" />
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 )
