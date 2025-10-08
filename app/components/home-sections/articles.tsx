@@ -49,15 +49,15 @@ export default function ArticlesSection() {
     return (
         <section id="articles">
             <div className="mx-auto p-4 lg:px-0 pb-12 container">
-                <h1 className="mb-2 text-4xl leading-snug">
+                <h1 data-aos="fade-right" className="mb-2 text-4xl leading-snug">
                     Berita
                 </h1>
-                <Link to={'#'} className="flex gap-4 mb-4 text-primary">Selengkapnya <ArrowRight /></Link>
+                <Link data-aos="fade-right" data-aos-delay="250" to={'#'} className="flex gap-4 mb-4 text-primary">Selengkapnya <ArrowRight /></Link>
                 <div className="lg:flex items-center gap-8">
                     {/* Artikel terbaru */}
                     <div className="mb-6 lg:mb-0 lg:w-6/12">
                         {latestArticle ? (
-                            <div className="relative rounded-2xl w-full h-96 overflow-hidden">
+                            <div data-aos="zoom-in" data-aos-delay="250" className="relative rounded-2xl w-full h-96 overflow-hidden">
                                 {/* Gambar utama dengan lazy load */}
                                 <img
                                     src={latestArticle.image}
@@ -95,8 +95,8 @@ export default function ArticlesSection() {
                     {/* List artikel lainnya */}
                     <div className="lg:w-6/12">
                         {otherArticles.length > 0 ? (
-                            otherArticles.map((article) => (
-                                <a href={article.href} className="flex gap-4 hover:bg-secondary p-4 not-last:border-b" key={article.title}>
+                            otherArticles.map((article, idx) => (
+                                <a data-aos="fade-right" href={article.href} className="flex gap-4 hover:bg-secondary p-4 not-last:border-b" key={article.title}>
                                     <img
                                         src={article.image}
                                         alt={article.title}

@@ -1,4 +1,3 @@
-import React, { useState } from "react"
 import { Card, CardContent } from "../ui/card"
 import strukturLow from "~/images/struktur.webp"
 import { Link } from "react-router"
@@ -13,27 +12,26 @@ const missions = [
 ]
 
 export default function AboutSection() {
-    const [showModal, setShowModal] = useState(false)
 
     return (
         <section id="about">
-            <div className="mx-auto p-4 lg:px-0 container">
-                <h1 className="mb-4 text-4xl leading-snug">
+            <div className="mx-auto p-4 lg:px-0 pt-12 container">
+                <h1 data-aos="fade-right" className="mb-4 text-4xl">
                     <span className="text-primary">Tentang</span> Kami
                 </h1>
                 <div className="lg:flex gap-8">
                     {/* Kolom kiri */}
                     <div className="lg:w-1/2">
-                        <h2 className="mb-4 text-muted">Visi</h2>
-                        <Card className="mb-4">
+                        <h2 data-aos="fade-right" className="mb-4 text-muted">Visi</h2>
+                        <Card data-aos="fade-right" data-aos-delay="250" className="mb-4">
                             <CardContent>
                                 Mewujudkan generasi qur'an unggul dan rujukan yang berwawasan luas, berfikir maju dalam iptek, kuat dalam aqidah dan menjadi pelopor multilingual masyarakat qur'ani.
                             </CardContent>
                         </Card>
 
-                        <h2 className="mb-4 text-muted">Misi</h2>
+                        <h2 data-aos="fade-right" className="mb-4 text-muted">Misi</h2>
                         {missions.map((misi, idx) => (
-                            <Card className="mb-4" key={idx}>
+                            <Card data-aos="fade-right" className="mb-4" key={idx}>
                                 <CardContent>{misi}</CardContent>
                             </Card>
                         ))}
@@ -41,8 +39,8 @@ export default function AboutSection() {
 
                     {/* Kolom kanan */}
                     <div className="lg:w-1/2">
-                        <h2 className="mb-4 text-muted">Struktur Organisasi</h2>
-                        <Link to={strukturHigh} target="_blank"
+                        <h2 data-aos="fade-right" className="mb-4 text-muted">Struktur Organisasi</h2>
+                        <Link data-aos="zoom-in" to={strukturHigh} target="_blank"
                             className="flex justify-center items-center mb-4 border rounded-2xl h-96 lg:h-[calc(100%-3rem)] overflow-hidden cursor-pointer"
                         >
                             {/* Gunakan gambar low-quality + lazy load */}
