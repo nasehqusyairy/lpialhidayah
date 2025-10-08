@@ -1,17 +1,6 @@
 import {
     ArrowRight,
 } from "lucide-react";
-import {
-    Item,
-    ItemActions,
-    ItemContent,
-    ItemDescription,
-    ItemGroup,
-    ItemMedia,
-    ItemSeparator,
-    ItemTitle,
-} from "../ui/item";
-import React from "react";
 import placeholderImage from "~/images/placeholder.jpg";
 import { Badge } from "../ui/badge";
 import { Link } from "react-router";
@@ -68,10 +57,15 @@ export default function ArticlesSection() {
                     {/* Artikel terbaru */}
                     <div className="mb-6 lg:mb-0 lg:w-6/12">
                         {latestArticle ? (
-                            <div
-                                className="relative bg-cover bg-center rounded-2xl w-full h-96 overflow-hidden"
-                                style={{ backgroundImage: `url(${latestArticle.image})` }}
-                            >
+                            <div className="relative rounded-2xl w-full h-96 overflow-hidden">
+                                {/* Gambar utama dengan lazy load */}
+                                <img
+                                    src={latestArticle.image}
+                                    alt={latestArticle.title}
+                                    loading="lazy"
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+
                                 {/* Overlay gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
@@ -106,6 +100,7 @@ export default function ArticlesSection() {
                                     <img
                                         src={article.image}
                                         alt={article.title}
+                                        loading="lazy"
                                         className="rounded-md w-4/12 object-cover aspect-video"
                                     />
                                     <div className="flex flex-col justify-between w-8/12">
