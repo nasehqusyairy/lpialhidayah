@@ -2,7 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 import { Separator } from "../ui/separator";
 
-export default () => {
+export default function StatsSection() {
     const stats = [
         { label: "Tenaga Mengajar", value: 1280 },
         { label: "Peserta Didik", value: 5420 },
@@ -19,7 +19,6 @@ export default () => {
         >
             <div className="absolute inset-0 bg-black/25" />
             <div className="relative mx-auto px-4 lg:px-0 text-center container">
-                {/* <h2 className="mb-10 font-bold text-3xl">Data Pendidikan Terkini</h2> */}
                 <div className="lg:flex gap-4 grid bg-background shadow-2xl py-12 rounded-2xl">
                     {stats.map((item, index) => (
                         <React.Fragment key={index}>
@@ -29,18 +28,27 @@ export default () => {
                                 className="flex flex-col justify-center items-center p-6 rounded-2xl lg:w-4/12"
                             >
                                 <CountUp
-                                    enableScrollSpy
-                                    scrollSpyOnce
                                     start={0}
                                     end={item.value}
                                     duration={2.5}
                                     separator=","
-                                    className="mb-2 font-bold text-5xl"
-                                />
+                                    enableScrollSpy
+                                    scrollSpyOnce
+                                >
+                                    {({ countUpRef }) => (
+                                        <span
+                                            ref={countUpRef}
+                                            className="mb-2 font-bold text-5xl"
+                                        />
+                                    )}
+                                </CountUp>
                                 <p className="font-medium text-primary text-lg">{item.label}</p>
                             </div>
                             {index < stats.length - 1 && (
-                                <Separator orientation="vertical" className="hidden lg:block h-32!" />
+                                <Separator
+                                    orientation="vertical"
+                                    className="hidden lg:block h-32"
+                                />
                             )}
                         </React.Fragment>
                     ))}
