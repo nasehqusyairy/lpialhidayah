@@ -22,7 +22,7 @@ export default () => (
                     <div className="flex flex-wrap lg:justify-center gap-4 lg:gap-6 text-muted text-center">
                         {companies.map((company, i) => (
                             <Link data-aos="fade-left" data-aos-delay={(i + 1) * 300} key={company.label} className="block hover:text-primary" to={company.href}>
-                                <img src={company.logo} loading="lazy" className="mx-auto mb-2 h-12 lg:h-16" alt={company.label} />
+                                <img src={company.logo} loading="lazy" className="mx-auto mb-2 h-12 lg:h-16" alt={`Logo ${company.label}`} />
                                 <p>{company.label}</p>
                             </Link>
                         ))}
