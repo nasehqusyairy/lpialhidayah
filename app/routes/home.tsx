@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import InfinitePhoto from "~/components/home-sections/infinite-photo";
-import Recap from "~/components/home-sections/recap";
+// import Recap from "~/components/home-sections/recap";
 
 export default function Home() {
 
@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <InfinitePhoto />
       <About />
-      <Recap />
+      {/* <Recap /> */}
       <Articles />
     </>
   );

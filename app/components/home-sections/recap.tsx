@@ -1,7 +1,6 @@
-import React, { lazy } from "react";
+import React from "react";
+import CountUp from "react-countup";
 import { Separator } from "../ui/separator";
-
-const CountUp = lazy(() => import("react-countup"));
 
 export default () => {
     const stats = [
