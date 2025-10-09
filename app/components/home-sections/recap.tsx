@@ -19,19 +19,18 @@ export default () => {
         >
             <div className="absolute inset-0 bg-black/25" />
             <div className="relative mx-auto px-4 lg:px-0 text-center container">
-                <div className="lg:flex gap-4 grid bg-background shadow-2xl py-12 rounded-2xl">
+                <div className="lg:flex gap-4 grid bg-background shadow-2xl px-6 py-12 rounded-2xl">
                     {stats.map((item, index) => (
                         <React.Fragment key={index}>
                             <div
                                 data-aos="fade-up"
                                 data-aos-delay={index * 250}
-                                className="flex flex-col justify-center items-center p-6 rounded-2xl lg:w-4/12"
+                                className="flex flex-col justify-center items-center py-6 rounded-2xl lg:w-4/12"
                             >
                                 <CountUp
                                     start={0}
                                     end={item.value}
                                     duration={2.5}
-                                    separator=","
                                     enableScrollSpy
                                     scrollSpyOnce
                                 >
@@ -45,10 +44,17 @@ export default () => {
                                 <p className="font-medium text-primary text-lg">{item.label}</p>
                             </div>
                             {index < stats.length - 1 && (
-                                <Separator
-                                    orientation="vertical"
-                                    className="hidden lg:block h-32"
-                                />
+                                <>
+                                    <Separator
+                                        orientation="vertical"
+                                        className="hidden lg:block bg-border h-32!"
+                                    />
+                                    <Separator
+                                        orientation="horizontal"
+                                        className="lg:hidden bg-border"
+                                    />
+
+                                </>
                             )}
                         </React.Fragment>
                     ))}

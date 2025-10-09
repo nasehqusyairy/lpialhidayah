@@ -48,7 +48,7 @@ export default function ArticlesSection() {
 
     return (
         <section id="articles">
-            <div className="mx-auto p-4 lg:px-0 py-12 container">
+            <div className="mx-auto p-4 lg:px-0 pt-12 container">
                 <h1 data-aos="fade-right" className="mb-2 text-4xl leading-snug">
                     Berita
                 </h1>
@@ -57,7 +57,7 @@ export default function ArticlesSection() {
                     {/* Artikel terbaru */}
                     <div className="mb-6 lg:mb-0 lg:w-6/12">
                         {latestArticle ? (
-                            <div data-aos="zoom-in" data-aos-delay="250" className="relative rounded-2xl w-full h-96 overflow-hidden">
+                            <Link to={latestArticle.href} data-aos="zoom-in" data-aos-delay="250" className="block relative rounded-2xl w-full h-96 overflow-hidden">
                                 {/* Gambar utama dengan lazy load */}
                                 <img
                                     src={latestArticle.image}
@@ -73,9 +73,7 @@ export default function ArticlesSection() {
                                 <div className="bottom-0 left-0 z-10 absolute p-6">
                                     <Badge className="mb-4">{latestArticle.category}</Badge>
                                     <h2 className="text-shadow-sm mb-2 font-semibold text-white text-2xl">
-                                        <a href={latestArticle.href} className="hover:text-primary">
-                                            {latestArticle.title}
-                                        </a>
+                                        {latestArticle.title}
                                     </h2>
                                     <p className="text-shadow-sm mb-4 text-white text-sm">
                                         {latestArticle.excerpt}
@@ -84,7 +82,7 @@ export default function ArticlesSection() {
                                         {latestArticle.date}
                                     </p>
                                 </div>
-                            </div>
+                            </Link>
                         ) : (
                             <p className="text-muted italic">
                                 Tidak ada artikel untuk kategori ini.

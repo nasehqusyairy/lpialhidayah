@@ -14,11 +14,11 @@ export default function InfinitePhotoSection() {
     return (
         <Swiper
             modules={[Autoplay, FreeMode]}
-            spaceBetween={20}
+            spaceBetween={16}
             slidesPerView={2}
             freeMode={true}
             loop={true}
-            speed={5000}
+            speed={3000}
             autoplay={{
                 delay: 0,
                 disableOnInteraction: true,
