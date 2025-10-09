@@ -96,7 +96,7 @@ export default function ArticlesSection() {
                     <div className="lg:w-6/12">
                         {otherArticles.length > 0 ? (
                             otherArticles.map((article, idx) => (
-                                <a data-aos="fade-right" href={article.href} className="flex gap-4 hover:bg-secondary py-4 not-last:border-b" key={article.title}>
+                                <a data-aos="fade-right" href={article.href} className="flex gap-4 py-4 not-last:border-b hover:underline" key={article.title}>
                                     <img
                                         src={article.image}
                                         alt={article.title}
