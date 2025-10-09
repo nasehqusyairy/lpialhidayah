@@ -2,7 +2,7 @@ import React from "react";
 import CountUp from "react-countup";
 import { Separator } from "../ui/separator";
 
-export default function StatsSection() {
+export default () => {
     const stats = [
         { label: "Tenaga Mengajar", value: 1280 },
         { label: "Peserta Didik", value: 5420 },
