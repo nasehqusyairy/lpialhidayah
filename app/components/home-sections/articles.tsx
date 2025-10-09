@@ -48,7 +48,7 @@ export default function ArticlesSection() {
 
     return (
         <section id="articles">
-            <div className="mx-auto p-4 lg:px-0 pb-12 container">
+            <div className="mx-auto p-4 lg:px-0 py-12 container">
                 <h1 data-aos="fade-right" className="mb-2 text-4xl leading-snug">
                     Berita
                 </h1>
@@ -96,7 +96,7 @@ export default function ArticlesSection() {
                     <div className="lg:w-6/12">
                         {otherArticles.length > 0 ? (
                             otherArticles.map((article, idx) => (
-                                <a data-aos="fade-right" href={article.href} className="flex gap-4 hover:bg-secondary p-4 not-last:border-b" key={article.title}>
+                                <a data-aos="fade-right" href={article.href} className="flex gap-4 hover:bg-secondary py-4 not-last:border-b" key={article.title}>
                                     <img
                                         src={article.image}
                                         alt={article.title}

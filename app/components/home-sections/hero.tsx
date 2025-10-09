@@ -3,7 +3,7 @@ import { companies } from "~/models/company"
 
 export default () => (
     <section className="bg-cross dark:bg-none">
-        <div className="mx-auto px-4 lg:px-0 py-12 container">
+        <div className="mx-auto px-4 lg:px-0 pt-12 pb-6 container">
             <div className="lg:flex justify-center items-center mb-6 lg:mb-12 lg:text-center">
                 <div className="hidden lg:block w-3/12">
                     <div className="relative w-1/2">
