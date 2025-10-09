@@ -3,11 +3,17 @@ import Hero from "~/components/home-sections/hero";
 import Articles from "~/components/home-sections/articles";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import InfinitePhoto from "~/components/home-sections/infinite-photo";
-// import Recap from "~/components/home-sections/recap";
+import type { Route } from "./+types/home";
 
-export default function Home() {
+export const clientLoader = () => {
+  return { Recap: lazy(() => import("~/components/home-sections/recap")) };
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
+
+  const { Recap } = loaderData;
 
   useEffect(() => {
     AOS.init({
@@ -21,7 +27,7 @@ export default function Home() {
       <Hero />
       <InfinitePhoto />
       <About />
-      {/* <Recap /> */}
+      <Recap />
       <Articles />
     </>
   );

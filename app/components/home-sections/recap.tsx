@@ -2,13 +2,13 @@ import React from "react";
 import CountUp from "react-countup";
 import { Separator } from "../ui/separator";
 
-export default () => {
-    const stats = [
-        { label: "Tenaga Mengajar", value: 1280 },
-        { label: "Peserta Didik", value: 5420 },
-        { label: "Lembaga Pendidikan", value: 85 },
-    ];
+const stats = [
+    { label: "Tenaga Mengajar", value: 1280 },
+    { label: "Peserta Didik", value: 5420 },
+    { label: "Lembaga Pendidikan", value: 85 },
+];
 
+export default () => {
     return (
         <section
             className="relative bg-primary bg-center bg-fixed py-32"
