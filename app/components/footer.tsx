@@ -11,7 +11,7 @@ const socialLinks: SocialButtonProps[] = [
 ]
 
 export default () => (
-    <div className="p-4 lg:px-0 border-t text-sm">
+    <footer className="p-4 lg:px-0 border-t text-sm">
         <div className="mx-auto container">
             <div className="flex lg:flex-row-reverse flex-col justify-between items-center">
                 <div className="flex items-center gap-4">
@@ -20,5 +20,5 @@ export default () => (
                 <div className="lg:m-0 mt-4">© 2025 LPI <span className="text-primary">Al-Hidayah</span></div>
             </div>
         </div>
-    </div>
+    </footer>
 )
