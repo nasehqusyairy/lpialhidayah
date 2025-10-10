@@ -4,7 +4,7 @@ import InfinitePhoto from "./infinite-photo"
 
 export default () => (
     <section className="bg-cross dark:bg-none">
-        <div className="mx-auto px-4 lg:px-0 pt-12 pb-6 container">
+        <div className="mx-auto px-4 pt-12 pb-6 container">
             <div className="lg:flex justify-center items-center mb-6 lg:mb-12">
                 <div className="lg:m-0 mb-6 lg:w-6/12">
                     <h1 data-aos="fade-up" className="mb-4 text-4xl lg:text-6xl leading-snug">

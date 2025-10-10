@@ -5,7 +5,7 @@ import NavSm from './nav-sm'
 export default () => {
     return (
         <nav className="relative h-16">
-            <div className="z-50 fixed bg-background p-4 lg:px-0 border-b w-full">
+            <div className="z-50 fixed bg-background p-4 border-b w-full">
                 <div className="mx-auto container">
                     <div className="flex justify-between items-center">
                         <a href='/#' className="flex items-center gap-4">

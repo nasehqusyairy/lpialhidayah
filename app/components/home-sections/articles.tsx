@@ -48,7 +48,7 @@ export default function ArticlesSection() {
 
     return (
         <section id="articles">
-            <div className="mx-auto p-4 lg:px-0 pt-12 container">
+            <div className="mx-auto p-4 pt-12 container">
                 <h1 data-aos="fade-right" className="mb-2 text-4xl leading-snug">
                     Berita
                 </h1>

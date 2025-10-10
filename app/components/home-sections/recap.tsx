@@ -8,17 +8,19 @@ const stats = [
     { label: "Lembaga Pendidikan", value: 85 },
 ];
 
+const backgroundImageUrl = "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1920&q=80";
+
 export default () => {
     return (
         <section
             className="relative bg-primary bg-center bg-fixed py-32"
             style={{
                 backgroundImage:
-                    "url('https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1920&q=80')",
+                    `url('${backgroundImageUrl}')`,
             }}
         >
             <div className="absolute inset-0 bg-black/25" />
-            <div className="relative mx-auto px-4 lg:px-0 text-center container">
+            <div className="relative mx-auto px-4 text-center container">
                 <div className="lg:flex gap-4 grid bg-background shadow-2xl px-6 py-12 rounded-2xl">
                     {stats.map((item, index) => (
                         <React.Fragment key={index}>
