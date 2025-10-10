@@ -1,5 +1,4 @@
-import MapNForm from "../contact/map-n-form"
-import SocmedsBar from "../contact/socmeds-bar"
+import LinksNForm from "../links-n-form"
 
 export default () => {
     return (
@@ -8,8 +7,7 @@ export default () => {
                 <h1 data-aos="fade-right" className="mb-6 text-4xl">
                     <span className="text-primary">Hubungi</span> Kami
                 </h1>
-                <SocmedsBar />
-                <MapNForm />
+                <LinksNForm />
             </div>
         </section>
     )
