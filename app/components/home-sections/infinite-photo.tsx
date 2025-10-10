@@ -39,7 +39,7 @@ export default () => {
                     delay: 2000,
                 }),
             ]}
-            className="w-full overflow-hidden"
+            className="rounded-2xl w-full overflow-hidden"
         >
             <CarouselContent className="-ml-4">
                 {photos.map((src, i) => (
