@@ -1,6 +1,7 @@
 import { Card, CardContent } from "../ui/card"
 import strukturLow from "~/images/struktur.webp"
 import { Link } from "react-router"
+import { lazy, useEffect, useState } from "react"
 
 const strukturHigh = "/images/struktur.png"
 const missions = [
@@ -12,48 +13,55 @@ const missions = [
 ]
 
 export default function AboutSection() {
+    const [Recap, setRecap] = useState<React.LazyExoticComponent<React.FC>>();
+    useEffect(() => {
+        setRecap(lazy(() => import("~/components/home-sections/recap")));
 
+    }, []);
     return (
-        <section id="about">
-            <div className="mx-auto p-4 lg:px-0 py-12 container">
-                <h1 data-aos="fade-right" className="mb-4 text-4xl">
-                    <span className="text-primary">Tentang</span> Kami
-                </h1>
-                <div className="lg:flex gap-8">
-                    {/* Kolom kiri */}
-                    <div className="lg:w-1/2">
-                        <h2 data-aos="fade-right" className="mb-4 text-muted">Visi</h2>
-                        <Card data-aos="fade-right" data-aos-delay="250" className="mb-4">
-                            <CardContent>
-                                Mewujudkan generasi qur'an unggul dan rujukan yang berwawasan luas, berfikir maju dalam iptek, kuat dalam aqidah dan menjadi pelopor multilingual masyarakat qur'ani.
-                            </CardContent>
-                        </Card>
-
-                        <h2 data-aos="fade-right" className="mb-4 text-muted">Misi</h2>
-                        {missions.map((misi, idx) => (
-                            <Card data-aos="fade-right" className="mb-4" key={idx}>
-                                <CardContent>{misi}</CardContent>
+        <>
+            <section id="about">
+                <div className="mx-auto p-4 lg:px-0 py-12 container">
+                    <h1 data-aos="fade-right" className="mb-4 text-4xl">
+                        <span className="text-primary">Tentang</span> Kami
+                    </h1>
+                    <div className="lg:flex gap-8">
+                        {/* Kolom kiri */}
+                        <div className="lg:w-1/2">
+                            <h2 data-aos="fade-right" className="mb-4 text-muted">Visi</h2>
+                            <Card data-aos="fade-right" data-aos-delay="250" className="mb-4">
+                                <CardContent>
+                                    Mewujudkan generasi qur'an unggul dan rujukan yang berwawasan luas, berfikir maju dalam iptek, kuat dalam aqidah dan menjadi pelopor multilingual masyarakat qur'ani.
+                                </CardContent>
                             </Card>
-                        ))}
-                    </div>
 
-                    {/* Kolom kanan */}
-                    <div className="lg:w-1/2">
-                        <h2 data-aos="fade-right" className="mb-4 text-muted">Struktur Organisasi</h2>
-                        <Link data-aos="zoom-in" to={strukturHigh} target="_blank"
-                            className="flex justify-center items-center mb-4 border rounded-2xl h-96 lg:h-[calc(100%-3rem)] overflow-hidden cursor-pointer"
-                        >
-                            {/* Gunakan gambar low-quality + lazy load */}
-                            <img
-                                src={strukturLow}
-                                alt="Struktur Organisasi"
-                                loading="lazy"
-                                className="hover:opacity-90 w-full h-full object-contain transition-opacity duration-300"
-                            />
-                        </Link>
+                            <h2 data-aos="fade-right" className="mb-4 text-muted">Misi</h2>
+                            {missions.map((misi, idx) => (
+                                <Card data-aos="fade-right" className="mb-4" key={idx}>
+                                    <CardContent>{misi}</CardContent>
+                                </Card>
+                            ))}
+                        </div>
+
+                        {/* Kolom kanan */}
+                        <div className="lg:w-1/2">
+                            <h2 data-aos="fade-right" className="mb-4 text-muted">Struktur Organisasi</h2>
+                            <Link data-aos="zoom-in" to={strukturHigh} target="_blank"
+                                className="flex justify-center items-center mb-4 border rounded-2xl h-96 lg:h-[calc(100%-3rem)] overflow-hidden cursor-pointer"
+                            >
+                                {/* Gunakan gambar low-quality + lazy load */}
+                                <img
+                                    src={strukturLow}
+                                    alt="Struktur Organisasi"
+                                    loading="lazy"
+                                    className="hover:opacity-90 w-full h-full object-contain transition-opacity duration-300"
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            {Recap && <Recap />}
+        </>
     )
 }

@@ -1,49 +1,64 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/free-mode";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+} from "~/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay"
+
+export function Example() {
+    return (
+        <Carousel
+            plugins={[
+                Autoplay({
+                    delay: 2000,
+                }),
+            ]}
+        >
+      // ...
+        </Carousel>
+    )
+}
 
 const photos = [
-    "https://picsum.photos/seed/1/600/400",
-    "https://picsum.photos/seed/2/600/400",
-    "https://picsum.photos/seed/3/600/400",
-    "https://picsum.photos/seed/4/600/400",
+    "https://picsum.photos/500/250.webp",
+    "https://picsum.photos/700/350.webp",
+    "https://picsum.photos/800/400.webp",
+    "https://picsum.photos/600/300.webp",
 ];
 
-export default function InfinitePhotoSection() {
+export default () => {
+
     return (
-        <Swiper
-            modules={[Autoplay, FreeMode]}
-            spaceBetween={16}
-            slidesPerView={2}
-            freeMode={true}
-            loop={true}
-            speed={3000}
-            autoplay={{
-                delay: 0,
-                disableOnInteraction: true,
-                reverseDirection: true,
+        <Carousel
+            opts={{
+                align: "start",
+                loop: true,
             }}
-            breakpoints={{
-                1024: {
-                    slidesPerView: 4,
-                },
-            }}
-            allowTouchMove={false}
-            className="w-full"
+            plugins={[
+                Autoplay({
+                    delay: 2000,
+                }),
+            ]}
+            className="w-full overflow-hidden"
         >
-            {photos.concat(photos).map((src, i) => (
-                <SwiperSlide key={i}>
-                    <div className="shadow-lg rounded-2xl overflow-hidden">
-                        <img
-                            loading="lazy"
-                            src={src}
-                            alt={`Placeholder ${i + 1}`}
-                            className="w-full h-64 object-cover"
-                        />
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+            <CarouselContent className="-ml-4">
+                {photos.map((src, i) => (
+                    <CarouselItem key={i} className="pl-4 basis-1/1">
+                        <div className="before:absolute relative before:inset-0 before:bg-gradient-to-b before:from-transparent before:to-black shadow-lg rounded-2xl overflow-hidden before:content">
+                            <img
+                                src={src}
+                                alt={`Placeholder ${i + 1}`}
+                                className="w-full object-cover aspect-video"
+                                loading="lazy"
+                            />
+                            <div className="bottom-0 left-0 absolute p-6">
+                                <h1 className="font-bold text-white text-2xl">Placeholder {i + 1}</h1>
+                                <p className="text-white text-sm">This is a description for placeholder {i + 1}</p>
+                            </div>
+                        </div>
+                    </CarouselItem>
+                ))}
+            </CarouselContent>
+        </Carousel>
     );
 }
