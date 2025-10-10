@@ -39,7 +39,9 @@ export default () => (
                         </Button>
                     </NavigationMenuItem>
                 ) : item.label === 'separator' ? (
-                    <Separator orientation="vertical" key={`separator-${index}`} className="h-8!" />
+                    <NavigationMenuItem key={index}>
+                        <Separator orientation="vertical" className="h-8!" />
+                    </NavigationMenuItem>
                 ) : (
                     <NavigationMenuItem key={item.label}>
                         <NavigationMenuLink href={item.href ?? "#"}>{item.label}</NavigationMenuLink>

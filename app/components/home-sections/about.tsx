@@ -51,6 +51,7 @@ export default function AboutSection() {
                             >
                                 {/* Gunakan gambar low-quality + lazy load */}
                                 <img
+                                    fetchPriority="high"
                                     src={strukturLow}
                                     alt="Struktur Organisasi"
                                     loading="lazy"
