@@ -1,7 +1,6 @@
 import { Link } from "react-router"
 import { companies } from "~/models/company"
 import InfinitePhoto from "./infinite-photo"
-import { useEffect } from "react";
 
 export default () => (
     <section className="bg-cross dark:bg-none">

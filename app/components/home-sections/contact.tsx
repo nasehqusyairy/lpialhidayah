@@ -17,7 +17,7 @@ export default () => {
                 <ContactBar />
                 <div className="lg:flex flex-row-reverse items-stretch gap-8">
                     <div className="mb-8 lg:mb-0 lg:w-6/12">
-                        <iframe data-aos="zoom-in" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7900.889297545219!2d111.86641900000001!3d-8.056044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78e300c4156a41%3A0xeb19fa0c03d695d3!2sMA%20AL%20HIDAYAH!5e0!3m2!1sid!2sid!4v1760003421799!5m2!1sid!2sid" loading="lazy" className="rounded-2xl lg:w-full lg:h-full aspect-video" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Lokasi MA AL HIDAYAH" data-aos="zoom-in" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7900.889297545219!2d111.86641900000001!3d-8.056044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78e300c4156a41%3A0xeb19fa0c03d695d3!2sMA%20AL%20HIDAYAH!5e0!3m2!1sid!2sid!4v1760003421799!5m2!1sid!2sid" loading="lazy" className="rounded-2xl lg:w-full lg:h-full aspect-video" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div className="lg:mb-0 lg:w-6/12" data-aos="fade-right">
                         <Alert variant="default" className="bg-primary/10 mb-6 border-primary text-primary">
