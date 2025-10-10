@@ -13,7 +13,7 @@ import {
 import { Button } from "../ui/button"
 import { navigation } from "~/models/navigation"
 import { ChevronsUpDown, Menu } from "lucide-react"
-import { Link } from "react-router"
+import { Link, NavLink } from "react-router"
 import { Separator } from "../ui/separator"
 
 export default () => (
@@ -31,7 +31,7 @@ export default () => (
                 </SheetTitle>
             </SheetHeader>
 
-            <nav className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
                 {navigation.map((item, index) =>
                     item.children ? (
                         <Collapsible key={item.label}>
@@ -60,16 +60,16 @@ export default () => (
                     ) : item.label === 'separator' ? (
                         <Separator orientation="horizontal" key={`separator-${index}`} />
                     ) : (
-                        <Link
+                        <NavLink
                             key={item.label}
                             to={item.href ?? "#"}
-                            className="hover:bg-secondary p-2 rounded w-full"
+                            className="hover:bg-secondary p-2 rounded w-full nav-link"
                         >
                             {item.label}
-                        </Link>
+                        </NavLink>
                     )
                 )}
-            </nav>
+            </div>
         </SheetContent>
     </Sheet>
 )

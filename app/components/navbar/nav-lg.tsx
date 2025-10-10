@@ -8,7 +8,7 @@ import {
 } from "~/components/ui/navigation-menu"
 import { Button } from "../ui/button"
 import { navigation } from "~/models/navigation"
-import { Link } from "react-router"
+import { Link, NavLink } from "react-router"
 import { Separator } from "../ui/separator"
 
 export default () => (
@@ -42,7 +42,9 @@ export default () => (
                     </NavigationMenuItem>
                 ) : (
                     <NavigationMenuItem key={item.label}>
-                        <NavigationMenuLink href={item.href ?? "#"}>{item.label}</NavigationMenuLink>
+                        <NavigationMenuLink asChild>
+                            <NavLink to={item.href ?? "#"} className="nav-link">{item.label}</NavLink>
+                        </NavigationMenuLink>
                     </NavigationMenuItem>
                 )
             )}

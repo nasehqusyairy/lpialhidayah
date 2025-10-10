@@ -47,11 +47,11 @@ export default () => {
                                 <>
                                     <Separator
                                         orientation="vertical"
-                                        className="hidden lg:block bg-border h-32!"
+                                        className="hidden lg:block h-32!"
                                     />
                                     <Separator
                                         orientation="horizontal"
-                                        className="lg:hidden bg-border"
+                                        className="lg:hidden"
                                     />
 
                                 </>

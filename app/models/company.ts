@@ -12,10 +12,10 @@ export type Company = {
 }
 
 export const companies: Company[] = [
-    { label: 'STAI', logo: logoStai, href: '#' },
-    { label: 'MA', logo: logoMa, href: '#' },
-    { label: 'SMP', logo: logoSmp, href: '#' },
-    { label: 'TPQ', logo: logoTpq, href: '#' },
-    { label: 'Madin', logo: logoMadin, href: '#' },
-    { label: 'Mahad', logo: logoMahad, href: '#' },
+    { label: 'STAI', logo: logoStai, href: 'https://staialmannan.ac.id' },
+    { label: 'MA', logo: logoMa, href: 'https://ma.lpialhidayah.or.id' },
+    { label: 'SMP', logo: logoSmp, href: 'https://smpt.lpialhidayah.or.id' },
+    { label: 'TPQ', logo: logoTpq, href: 'https://tpq.lpialhidayah.or.id' },
+    { label: 'Madin', logo: logoMadin, href: 'https://madin.lpialhidayah.or.id' },
+    { label: 'Mahad', logo: logoMahad, href: 'https://mahad.lpialhidayah.or.id' },
 ]
