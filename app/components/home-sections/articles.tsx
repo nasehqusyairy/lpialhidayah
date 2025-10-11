@@ -1,45 +1,8 @@
-import {
-    ArrowRight,
-} from "lucide-react";
-import placeholderImage from "~/images/placeholder.jpg";
+import { ArrowRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Link } from "react-router";
-
-
-const articles = [
-    {
-        title: "Judul Artikel 1",
-        image: placeholderImage,
-        category: "Umum",
-        date: "2023-10-01",
-        excerpt: "Ini adalah cuplikan dari artikel 1...",
-        href: "#",
-    },
-    {
-        title: "Judul Artikel 2",
-        image: placeholderImage,
-        category: "Event",
-        date: "2023-10-05",
-        excerpt: "Ini adalah cuplikan dari artikel 2...",
-        href: "#",
-    },
-    {
-        title: "Judul Artikel 3",
-        image: placeholderImage,
-        category: "Prestasi",
-        date: "2023-10-10",
-        excerpt: "Ini adalah cuplikan dari artikel 3...",
-        href: "#",
-    },
-    {
-        title: "Judul Artikel 4",
-        image: placeholderImage,
-        category: "Informasi",
-        date: "2023-10-15",
-        excerpt: "Ini adalah cuplikan dari artikel 4...",
-        href: "#",
-    },
-];
+import { articles } from "~/models/article";
+import ArticleItem from "../article-item";
 
 export default function ArticlesSection() {
 
@@ -94,29 +57,7 @@ export default function ArticlesSection() {
                     <div className="lg:w-6/12">
                         {otherArticles.length > 0 ? (
                             otherArticles.map((article, idx) => (
-                                <a data-aos="fade-right" href={article.href} className="flex gap-4 py-4 not-last:border-b hover:underline" key={article.title}>
-                                    <img
-                                        src={article.image}
-                                        alt={article.title}
-                                        loading="lazy"
-                                        className="rounded-md w-4/12 object-cover aspect-video"
-                                    />
-                                    <div className="flex flex-col justify-between w-8/12">
-                                        <div>
-                                            <Badge className="mb-2" variant={"outline"}>{article.category}</Badge>
-                                            <div className="mb-2 font-medium text-sm">
-                                                {article.title}
-                                            </div>
-                                            <p className="text-muted text-sm">
-                                                {article.excerpt}
-                                            </p>
-                                        </div>
-
-                                        <p className="text-muted text-xs">
-                                            {article.date}
-                                        </p>
-                                    </div>
-                                </a>
+                                <ArticleItem key={idx} article={article} aos='fade-right' />
                             ))
                         ) : (
                             <p className="px-2 text-muted italic">
